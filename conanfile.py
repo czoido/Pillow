@@ -16,7 +16,6 @@ class PillowConan(ConanFile):
         "with_tiff": [True, False],
         "with_jpeg2000": [True, False],
         "with_freetype": [True, False],
-        # Raqm is always vendored (src/thirdparty/raqm); only harfbuzz+fribidi from Conan.
         "with_raqm": [True, False],
         "with_lcms": [True, False],
         "with_webp": [True, False],
