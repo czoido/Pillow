@@ -1,6 +1,6 @@
 [build-system]
-requires = ["conan-py-build @ git+https://github.com/czoido/conan-py-build.git@deploy-to-conan-libs"]
 build-backend = "conan_py_build.build"
+requires = [ "conan-py-build @ git+https://github.com/czoido/conan-py-build.git@deploy-to-conan-libs" ]
 
 [project]
 name = "pillow"
@@ -80,16 +80,6 @@ urls.Funding = "https://tidelift.com/subscription/pkg/pypi-pillow?utm_source=pyp
 urls.Homepage = "https://python-pillow.github.io"
 urls.Mastodon = "https://fosstodon.org/@pillow"
 urls.Source = "https://github.com/python-pillow/Pillow"
-
-[tool.conan-py-build.version]
-file = "src/PIL/_version.py"
-
-[tool.conan-py-build.wheel]
-packages = ["src/PIL"]
-
-[tool.conan-py-build.sdist]
-include = ["src/libImaging", "src/thirdparty", "src/Tk"]
-exclude = ["Tests", "depends", ".github", "wheels"]
 
 [tool.setuptools]
 packages = [
@@ -207,3 +197,9 @@ addopts = [ "-ra", "--color=auto" ]
 testpaths = [
   "Tests",
 ]
+
+[tool.conan-py-build]
+sdist.exclude = [ "Tests", "depends", ".github", "wheels" ]
+sdist.include = [ "src/libImaging", "src/thirdparty", "src/Tk" ]
+version.file = "src/PIL/_version.py"
+wheel.packages = [ "src/PIL" ]

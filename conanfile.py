@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 from conan import ConanFile
 from conan.tools.cmake import CMake, CMakeDeps, CMakeToolchain, cmake_layout
 
