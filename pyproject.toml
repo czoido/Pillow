@@ -177,6 +177,23 @@ lint.isort.required-imports = [
   "from __future__ import annotations",
 ]
 
+[tool.check-manifest]
+ignore = [
+  ".ci/**",
+  ".pre-commit-config.yaml",
+  "CHANGES.rst",
+  "checks/**",
+  "depends/**",
+  "docs/**",
+  "Makefile",
+  "MANIFEST.in",
+  "patches/**",
+  "RELEASING.md",
+  "Tests/**",
+  "wheels/**",
+  "winbuild/**",
+]
+
 [tool.pyproject-fmt]
 max_supported_python = "3.14"
 
@@ -196,23 +213,6 @@ pretty = true
 addopts = [ "-ra", "--color=auto" ]
 testpaths = [
   "Tests",
-]
-
-[tool.check-manifest]
-ignore = [
-  ".ci/**",
-  ".pre-commit-config.yaml",
-  "CHANGES.rst",
-  "MANIFEST.in",
-  "Makefile",
-  "RELEASING.md",
-  "Tests/**",
-  "checks/**",
-  "depends/**",
-  "docs/**",
-  "patches/**",
-  "wheels/**",
-  "winbuild/**",
 ]
 
 [tool.conan-py-build]
