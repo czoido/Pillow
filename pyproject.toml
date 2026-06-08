@@ -1,5 +1,5 @@
 [build-system]
-requires = ["conan-py-build"]
+requires = ["conan-py-build @ git+https://github.com/czoido/conan-py-build.git@deploy-to-conan-libs"]
 build-backend = "conan_py_build.build"
 
 [project]
