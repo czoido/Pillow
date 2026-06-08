@@ -198,6 +198,23 @@ testpaths = [
   "Tests",
 ]
 
+[tool.check-manifest]
+ignore = [
+  ".ci/**",
+  ".pre-commit-config.yaml",
+  "CHANGES.rst",
+  "MANIFEST.in",
+  "Makefile",
+  "RELEASING.md",
+  "Tests/**",
+  "checks/**",
+  "depends/**",
+  "docs/**",
+  "patches/**",
+  "wheels/**",
+  "winbuild/**",
+]
+
 [tool.conan-py-build]
 sdist.exclude = [ "Tests", "depends", ".github", "wheels" ]
 sdist.include = [ "src/libImaging", "src/thirdparty", "src/Tk" ]
